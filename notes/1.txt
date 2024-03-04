@@ -1,0 +1,202 @@
+https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
+https://testing-angular.com/testing-components-with-spectator/#testing-components-with-spectator
+
+
+
+=>it has two utilities are testBed,async 
+=>desscribe contains it,beforeEach,afterEach,xit
+
+Run:
+Ng test
+ng test -- include src\app
+
+Matcher:- it compare expected and actual output
+it  is two type:-
+1)inbuilt matcher
+2)custom matcher 
+
+inbuilt matcher:-
+1)toBe and toEqual:-
+toBe:- it is used for string,number,boolean
+toEqual work for every thing 
+
+2)toBe(true) and toBeTruthy() and toBeTrue()
+toBe(false) and toBeFalsy() and toBeFalse()
+toBe(true) it expect a value in argument
+toBeTrue() it depend on input
+expect("").toBeTruthy()
+expect(true).toBeTruthy()
+expect("pranav").toBeTruthy()
+expect(undefined).toBeTruthy()
+expect(undefined).toBeTruthy("abc")
+
+3)toMatch and toBeCloseTo()
+toMatch:- it is used for regualr expression
+toBeCloseTo():- it is close to the number
+
+4)toBeDefined() and toBeUndefined()
+
+5)tobenull(),tocontain(),tobeNan(),tobePositiveInfinity(),tobeNegativeInfinity()
+
+=>beforeEach:- run before each test case  
+=>afterEach:- run after each test case 
+
+=>beforeAll:- run once just before any block run
+=>afterAll:- run once just afterthe execution
+
+=>testBed:- it help to write testcases very easily
+it allow us to access html,ts,css
+it allow us to test change detection
+it provide method to create component and services
+
+=>fixture:-
+it allow everthing realted to component
+
+
+=>spyOn:- mock the function
+for dummy response=> .and.returnValue()
+for call original function=> .and.callThrough()
+for fake call=> .and.callFake(()=>{
+    return of({
+        "result1":200
+    })
+})
+for dummy pieceof code :- .and.stub();
+
+differnce b/w stub,mock and spy?
+stub:- stub dummy piece of code dot care
+mock:-  mock to verify the function called or not
+spy:- dummy piece of code
+
+fixture.detectChanges()
+
+
+
+
+
+
+
+Code coverage:
+ng test --no-watch --code-coverage
+
+Code coverage tool
+
+Components:-
+
+Component with children:-
+
+Component depending on services:-
+
+Services:-
+spy = spyOn(service, 'isAuthenticated').and.returnValue(false); (3)
+    expect(component.needsLogin()).toBeTruthy();
+    expect(service.isAuthenticated).toHaveBeenCalled(); (4)
+Mock service Call:-
+1)mock the service function call but not constructor
+ let logger = new LoggerService();
+ spyOn(logger,'log').and.callThrough();
+2)mock the service function call but not constructor
+ let logger =jasmine.createSpyObj 
+ spyOn(logger,'log').and.callThrough();
+
+
+
+
+Forms:-
+
+Component with spectators
+
+Pipes:-
+
+Directive:-
+
+Modules:-
+
+Routing:-
+
+Http:-
+
+
+
+
+Interview points:-
+
+beforeAll
+This function is called once, before all the specs in a test suite (describe function) are run.
+afterAll
+This function is called once after all the specs in a test suite are finished.
+beforeEach
+This function is called before each test specification (it function) is run.
+afterEach
+This function is called after each test specification is run.
+Describe: It is test suite
+it:It is a test spec
+xdescribe:-It is disable the test suite
+Xit:- it is disable the test spec
+Fdescribe:- out of all the test suite specific to run only
+Fit:- out of all the te
+https://codecraft.tv/courses/angular/unit-testing/jasmine-and-karma/
+https://testing-angular.com/testing-components-with-spectator/#testing-components-with-spectator
+
+Run:
+Ng test
+
+Code coverage:
+ng test --no-watch --code-coverage
+
+Code coverage tool
+
+Components:-
+
+Component with children:-
+
+Component depending on services:-
+
+Services:-
+spy = spyOn(service, 'isAuthenticated').and.returnValue(false); (3)
+    expect(component.needsLogin()).toBeTruthy();
+    expect(service.isAuthenticated).toHaveBeenCalled(); (4)
+Mock service Call:-
+1)mock the service function call but not constructor
+ let logger = new LoggerService();
+ spyOn(logger,'log').and.callThrough();
+2)mock the service function call but not constructor
+ let logger =jasmine.createSpyObj 
+ spyOn(logger,'log').and.callThrough();
+
+
+
+
+Forms:-
+
+Component with spectators
+
+Pipes:-
+
+Directive:-
+
+Modules:-
+
+Routing:-
+
+Http:-
+
+
+
+
+Interview points:-
+
+beforeAll
+This function is called once, before all the specs in a test suite (describe function) are run.
+afterAll
+This function is called once after all the specs in a test suite are finished.
+beforeEach
+This function is called before each test specification (it function) is run.
+afterEach
+This function is called after each test specification is run.
+Describe: It is test suite
+it:It is a test spec
+xdescribe:-It is disable the test suite
+Xit:- it is disable the test spec
+Fdescribe:- out of all the test suite specific to run only
+Fit:- out of all the te
